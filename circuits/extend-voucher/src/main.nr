@@ -11,14 +11,9 @@ fn main(
     keyHashExtension: Field,
     publicInputsExtension: [Field; 1] 
 ) -> pub (Field) {
-
     // compute the trajectory recursion proof
     let outputAggregationObject = std::verify_proof(
-        verificationKeyTrajectory.as_slice(),
-        proofTrajectory.as_slice(),
-        publicInputsTrajectory.as_slice(),
-        keyHashTrajectory,
-        inputAggregationObject,
+        verificationKeyTrajectory.as_slice(), proofTrajectory.as_slice(), publicInputsTrajectory.as_slice(), keyHashTrajectory, inputAggregationObject
     );
 
     (1)
@@ -27,7 +22,6 @@ fn main(
 // #[test]
 // fn test_main() {
 //     main(1, 2);
-
 //     // Uncomment to make test fail
 //     // main(1, 1);
 // }

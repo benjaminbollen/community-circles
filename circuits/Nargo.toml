@@ -2,4 +2,7 @@
 members = [
     "extend-voucher",
     "voucher",
+    "circle-update",
+    "path-transfer",
 ]
+
