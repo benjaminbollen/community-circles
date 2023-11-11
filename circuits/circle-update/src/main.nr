@@ -46,11 +46,17 @@ impl CirclePoint {
 fn main(
     circle_root_before: Field,
     circle_root_after: Field,
+    center_balance_before: u32,
+    center_balance_after: u32,
     points: [CirclePoint; MAX_BRANCH],
     indices: [Field; MAX_BRANCH],
-    merkle_paths: [[Field; DEPTH]; MAX_BRANCH],
+    merkle_paths_before: [[Field; DEPTH]; MAX_BRANCH],
+    merkle_paths_after: [[Field; DEPTH]; MAX_BRANCH],
     transfers_amounts: [i32; MAX_BRANCH],
 ) {
+    // each positive transfer amount flows from center
+    // to the point on the circle, and negative amounts
+    // flow from the circle inwards to the center
 
 }
 
