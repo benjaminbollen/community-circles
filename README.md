@@ -16,6 +16,13 @@ By introducing a trust graph of unique people, they also commit to having their 
 
 That way we construct a path-fungibility where the tokens can be transferred to unknown people, if a trust path connecting sender and receiver can be found.
 
+An illustrative example of a transfer occurring over a trust path can be found in the Circles UBI whitepaper and is reproduced below:
+
+![](./assets/circles_diagram_3.png)
+
+
+(from https://github.com/CirclesUBI/whitepaper)
+
 ## Problem
 
 The existing implementation exposes the trust graph **publicly** in solidity on-chain. To advance the project, we need to come up with a proposal to shield this valuable asset of a social graph while still enabling path transfers.
