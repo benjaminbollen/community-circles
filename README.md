@@ -1,6 +1,6 @@
 ## Community Circles
 
-Notice: during the hackathon we worked out advanced specifications for the whole problem. Unfortunately we did not complete enough implementation parts to stitch together a minimal feasible working demo the hackathon.
+Notice: during the hackathon we worked out advanced specifications for the whole problem. Unfortunately we did not complete enough implementation parts to stitch together a minimal feasible working demo for the hackathon.
 
 As Circles UBI is a public goods project, we thought we'd still write up the context and a highlevel of some of the specification in this readme and submit it to have a record at zkIstanbul.
 
@@ -19,8 +19,6 @@ That way we construct a path-fungibility where the tokens can be transferred to 
 An illustrative example of a transfer occurring over a trust path can be found in the Circles UBI whitepaper and is reproduced below:
 
 ![](./assets/circles_diagram_3.png)
-
-
 (from https://github.com/CirclesUBI/whitepaper)
 
 ## Problem
@@ -35,9 +33,9 @@ We used Aztec Noir to build the (recursive) proofs, but burned a lot of time on 
 
 ### Flow matrix
 
-By expressing the path transfer in a flow matrix where each row is a transfer of a specific token between to people (where the receiver trusts this token); and each column is a participant along the path-transfer, we can prove conservation of in-and-out flow for intermediate participants, and assert correct sender and receiver amounts at the start and end of the path.
+By expressing the path transfer in a flow matrix where each row is a transfer of a specific token between two people (where the receiver trusts this token); and each column is a participant along the path-transfer, we can prove conservation of in-and-out flow for intermediate participants, and assert correct sender and receiver amounts at the start and end of the path.
 
-This flow matrix can be extended from a single-path-transfer to a bath-path-transfer.
+This flow matrix can be extended from a single-path-transfer to a batch-path-transfer.
 
 ### Circle nodes
 
