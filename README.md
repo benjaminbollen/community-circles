@@ -18,12 +18,27 @@ That way we construct a path-fungibility where the tokens can be transferred to 
 
 ## Problem
 
-The existing implementation exposes the trust graph publicly in solidity on-chain. To advance the project, we need to come up with a proposal to shield this valuable asset from a full-global visibility
+The existing implementation exposes the trust graph **publicly** in solidity on-chain. To advance the project, we need to come up with a proposal to shield this valuable asset of a social graph while still enabling path transfers.
 
 ## Our work at zkIstanbul
 
+We introduce the idea of "*communities*" as a shielding contract on L1 (or L2 for scalability).
 
+We used Aztec Noir to build the (recursive) proofs, but burned a lot of time on trying to convert provided higher-level types back to Field elements for the recursive proof public inputs (note to Aztec: the documentation and examples are sparse on this advanced topic, nor could we find example in the v3 code-base as reference).
 
+### Flow matrix
+
+By expressing the path transfer in a flow matrix where each row is a transfer of a specific token between to people (where the receiver trusts this token); and each column is a participant along the path-transfer, we can prove conservation of in-and-out flow for intermediate participants, and assert correct sender and receiver amounts at the start and end of the path.
+
+This flow matrix can be extended from a single-path-transfer to a bath-path-transfer.
+
+### Circle nodes
+
+As each human has their own token, which other people can have a balance of, in addition for each token we need to track who accepts it as fungible for their own tokens.
+
+To solve for this, the community shielding contract tracks the root of a community Merkle tree.
+
+Each leaf in the community tree is a person who entered the shielded community
 
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
